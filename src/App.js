@@ -16,7 +16,8 @@ class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
-    error: undefined
+    error: undefined,
+    wind: undefined
   }
 
   // getWeather is a method we'll use to make the API call
@@ -40,6 +41,9 @@ class App extends React.Component {
         country: response.sys.country,
         humidity: response.main.humidity,
         description: response.weather[0].description,
+        wind: response.wind.speed,
+        temp_max: response.main.temp_max,
+        temp_min: response.main.temp_min,
         error: ""
       })
     }else{
@@ -76,6 +80,9 @@ class App extends React.Component {
                     humidity={this.state.humidity}
                     description={this.state.description}
                     error={this.state.error}
+                    wind={this.state.wind}
+                    temp_min={this.state.temp_min}
+                    temp_max={this.state.temp_max}
                   />
                 </div>
               </div>

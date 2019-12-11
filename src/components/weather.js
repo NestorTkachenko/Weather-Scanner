@@ -36,6 +36,24 @@ class Weather extends React.Component{
                 }
 
                 {
+                    this.props.wind && <p className="weather__key">Wind Speed:  
+                        <span className="weather__value">  {this.props.wind}</span>
+                    </p>
+                }
+
+                {
+                    this.props.temp_min && <p className="weather__key">Minimum Temperature:  
+                        <span className="weather__value">  {this.props.temp_min}</span>
+                    </p>
+                }
+
+                {
+                    this.props.temp_max && <p className="weather__key">Maximum Temperature:  
+                        <span className="weather__value">  {this.props.temp_max}</span>
+                    </p>
+                }
+
+                {
                     this.props.error && <p className="weather__error">{this.props.error}</p>
                 }
         
